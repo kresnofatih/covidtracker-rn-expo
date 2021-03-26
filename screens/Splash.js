@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, Image, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, Image, View, Dimensions, Pressable } from 'react-native'
 import { themeColors } from '../ThemeColors'
 import { useFonts } from 'expo-font';
-
+import { AntDesign } from '@expo/vector-icons';
 
 const Splash = () => {
     let [fontsLoaded] = useFonts({
@@ -21,6 +21,9 @@ const Splash = () => {
                 styles.splashSubtitle, 
                 fontsLoaded && {fontFamily: 'Raleway-Thin'}
             ]}>Find Out About Covid-19!</Text>
+            <Pressable style={styles.splashnext}>
+                <AntDesign name="rightcircle" size={40} color={themeColors.darkSky} />
+            </Pressable>
         </View>
     )
 }
@@ -47,5 +50,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 24,
         color: themeColors.darkSky
+    },
+    splashnext: {
+        position: 'absolute',
+        bottom: 30,
+        display: 'flex',
+        alignItems: 'center'
     }
 })
