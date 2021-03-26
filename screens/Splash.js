@@ -13,7 +13,7 @@ const Splash = () => {
         <View style={styles.splashContainer}>
             <Image
                 style={styles.splashImage}
-                source={require('../assets/icons8/splashimg.png')}
+                source={require('../assets/icons8/pandemic.png')}
                 resizeMode="contain"
             />
             <Text style={[styles.splashTitle, fontsLoaded && {fontFamily: 'Raleway-Light'}]}>CovidTraqqer</Text>
@@ -22,7 +22,7 @@ const Splash = () => {
                 fontsLoaded && {fontFamily: 'Raleway-Thin'}
             ]}>Find Out About Covid-19!</Text>
             <Pressable style={styles.splashnext}>
-                <AntDesign name="rightcircle" size={40} color={themeColors.darkSky} />
+                <AntDesign name="rightcircle" size={40} color={themeColors.lightPink} />
             </Pressable>
         </View>
     )
@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: themeColors.lightYellow,
+        backgroundColor: themeColors.clearWhite,
     },
     splashImage: {
-        width: Dimensions.get('window').width-50,
-        maxHeight: 375
+        width: Dimensions.get('window').width,
+        maxHeight: 275
     },
     splashTitle: {
         fontSize: 35,
