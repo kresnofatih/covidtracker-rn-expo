@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
     splashSubtitle: {
         marginTop: 5,
         fontSize: 24,
-        color: themeColors.darkSky
+        color: themeColors.lightPink
     },
     splashnext: {
         position: 'absolute',
         bottom: 30,
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 })
