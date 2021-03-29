@@ -1,18 +1,19 @@
 import React from 'react'
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
 import { themeColors } from '../ThemeColors'
-import { useFonts } from 'expo-font';
 import Header from '../components/Header';
 import Global from '../components/Global';
+import { StatusBar } from 'expo-status-bar';
 
-const Home = () => {
-    let [fontsLoaded] = useFonts({
-        'Raleway-Light' : require('../assets/fonts/Raleway/static/Raleway-Light.ttf'),
-        'Raleway-Thin' : require('../assets/fonts/Raleway/static/Raleway-Thin.ttf'),
-    });
+
+const Home = ({navigation}) => {
+    const goBack = ()=>{
+        navigation.goBack();
+    }
     return (
         <View style={styles.homeContainer}>
-            <Header/>
+            <StatusBar style="auto" />
+            <Header goBack={goBack}/>
             <Global/>
         </View>
     )

@@ -1,17 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './screens/Home';
-import Splash from './screens/Splash';
 import {themeColors} from './ThemeColors'
+import Navigator from './routes/SplashStack'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/* <Splash/> */}
-      <Home/>
-    </View>
+      <Navigator/>
   );
 }
 

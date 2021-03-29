@@ -1,10 +1,10 @@
 import React from 'react'
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Pressable, StyleSheet, Text, View } from 'react-native'
 import { themeColors } from '../ThemeColors'
 import { useFonts } from 'expo-font';
 import Constants from 'expo-constants'
 
-const Header = () => {
+const Header = ({goBack}) => {
     let [fontsLoaded] = useFonts({
         'Raleway-Light' : require('../assets/fonts/Raleway/static/Raleway-Light.ttf'),
         'Raleway-Thin' : require('../assets/fonts/Raleway/static/Raleway-Thin.ttf'),
@@ -12,26 +12,26 @@ const Header = () => {
     });
     return (
         <View style={styles.headerContainer}>
-            <View style={[styles.headerSidetitleContainer, {alignItems: 'flex-start'}]}>
+            <Pressable style={[styles.headerSidetitleContainer, {alignItems: 'flex-start'}]} onPress={goBack}>
                 <Text style={[
                     styles.headerTitle, 
                     fontsLoaded && {fontFamily: 'Raleway-Light',
                     marginLeft: 25, fontSize: 20, color: themeColors.clearWhite}
                 ]}>Back</Text>
-            </View>
+            </Pressable>
             <View style={styles.headerTitleContainer}>
                 <Text style={[
                     styles.headerTitle,
                     fontsLoaded && {fontFamily: 'Raleway-Medium'}
                 ]}>Home</Text>
             </View>
-            <View style={[styles.headerSidetitleContainer, {alignItems: 'flex-end'}]}>
+            <Pressable style={[styles.headerSidetitleContainer, {alignItems: 'flex-end'}]}>
                 <Text style={[
                     styles.headerTitle,
                     fontsLoaded && {fontFamily: 'Raleway-Light',
                     marginRight: 25, fontSize: 20, color: themeColors.clearWhite}
                 ]}>About</Text>
-            </View>
+            </Pressable>
         </View>
     )
 }

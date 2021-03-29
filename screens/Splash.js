@@ -3,14 +3,20 @@ import { StyleSheet, Text, Image, View, Dimensions, Pressable } from 'react-nati
 import { themeColors } from '../ThemeColors'
 import { useFonts } from 'expo-font';
 import { AntDesign } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 
-const Splash = () => {
+
+const Splash = ({navigation}) => {
+    const goToHome = () =>{
+        navigation.navigate('Home');
+    }
     let [fontsLoaded] = useFonts({
         'Raleway-Light' : require('../assets/fonts/Raleway/static/Raleway-Light.ttf'),
         'Raleway-Thin' : require('../assets/fonts/Raleway/static/Raleway-Thin.ttf'),
     });
     return (
         <View style={styles.splashContainer}>
+            <StatusBar style="auto" />
             <Image
                 style={styles.splashImage}
                 source={require('../assets/icons8/pandemic.png')}
@@ -21,7 +27,7 @@ const Splash = () => {
                 styles.splashSubtitle, 
                 fontsLoaded && {fontFamily: 'Raleway-Thin'}
             ]}>Find Out About Covid-19!</Text>
-            <Pressable style={styles.splashnext}>
+            <Pressable style={styles.splashnext} onPress={goToHome}>
                 <AntDesign name="rightcircle" size={40} color={themeColors.lightPink} />
             </Pressable>
         </View>
