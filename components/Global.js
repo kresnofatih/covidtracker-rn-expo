@@ -42,7 +42,7 @@ const Global = () => {
                             <Text style={[
                                 styles.globalinfoboxnumber,
                                 fontsLoaded && {fontFamily: 'SourceSansPro'}
-                            ]}>{globalData.TotalDeaths}</Text>{'\nTotal Deaths'}
+                            ]}>{globalData.NewDeaths}</Text>{'\nNew Deaths'}
                     </Text>
                 </View>
                 <View style={[styles.globalinfobox, {borderColor: themeColors.lightYellow}]}>
@@ -51,7 +51,34 @@ const Global = () => {
                             <Text style={[
                                 styles.globalinfoboxnumber,
                                 fontsLoaded && {fontFamily: 'SourceSansPro'}
+                            ]}>{globalData.TotalDeaths}</Text>{'\nTotal Deaths'}
+                    </Text>
+                </View>
+                <View style={[styles.globalinfobox, {borderColor: themeColors.cyanBlue}]}>
+                    <Text style={[styles.globalinfoboxtext, 
+                        fontsLoaded && {fontFamily: 'Raleway-Light'}]}>
+                            <Text style={[
+                                styles.globalinfoboxnumber,
+                                fontsLoaded && {fontFamily: 'SourceSansPro'}
+                            ]}>{globalData.NewConfirmed}</Text>{'\nNew Confirmed'}
+                    </Text>
+                </View>
+                <View style={[styles.globalinfobox, {borderColor: themeColors.lightPink}]}>
+                    <Text style={[styles.globalinfoboxtext, 
+                        fontsLoaded && {fontFamily: 'Raleway-Light'}]}>
+                            <Text style={[
+                                styles.globalinfoboxnumber,
+                                fontsLoaded && {fontFamily: 'SourceSansPro'}
                             ]}>{globalData.TotalConfirmed}</Text>{'\nTotal Confirmed'}
+                    </Text>
+                </View>
+                <View style={[styles.globalinfobox, {borderColor: themeColors.lightYellow}]}>
+                    <Text style={[styles.globalinfoboxtext, 
+                        fontsLoaded && {fontFamily: 'Raleway-Light'}]}>
+                            <Text style={[
+                                styles.globalinfoboxnumber,
+                                fontsLoaded && {fontFamily: 'SourceSansPro'}
+                            ]}>{globalData.NewRecovered}</Text>{'\nNew Recovered'}
                     </Text>
                 </View>
                 <View style={[styles.globalinfobox, {borderColor: themeColors.cyanBlue}]}>
@@ -65,11 +92,11 @@ const Global = () => {
                 </View>
             </>
             }
-            <Text style={[
+            {/* <Text style={[
                 styles.globalTitle,
                 fontsLoaded && {fontFamily: 'Raleway-Light'}
-            ]}>Countries</Text>
-            <>
+            ]}>Countries</Text> */}
+            {/* <>
                 <TouchableOpacity style={[styles.globalinfobox, {borderColor: themeColors.lightPink}]} onPress={()=>console.log('hello')}>
                     <Text style={[styles.globalinfoboxtext, 
                         fontsLoaded && {fontFamily: 'Raleway-Light'}]}>
@@ -100,7 +127,7 @@ const Global = () => {
                     </Text>
                         <AntDesign name="right" size={24} color="black" style={styles.nextBtn}/>
                 </TouchableOpacity>
-            </>
+            </> */}
         </View>
         </ScrollView>
     )
